@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Excel-to-SQL</title>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.mini.min.js"></script>
+    <link href="index.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Excel-to-SQL</h2>
+    <div class="upload-section" id="upload-section">
+        <label>
+            <input type="file" id="excel-file" accept=".xlsx" style="display:none;" />
+            select Excel
+        </label>
+    </div>
+
+    <label style="display:block; margin-bottom:10px;">
+        <input type="checkbox" id="valuesClause" />
+        values clause
+    </label>
+    <button id="copy-btn" style="margin-top:10px;">copy SQL</button>
+
+    <h4>result：</h4>
+    <pre id="output"></pre>
+
+    <script src="index.js"></script>
+</body>
+</html>

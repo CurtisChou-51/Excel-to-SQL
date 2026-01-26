@@ -1,0 +1,25 @@
+﻿body {
+    font-family: sans-serif;
+    padding: 0px 20px;
+}
+
+#output {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+}
+
+.upload-section {
+    margin-bottom: 20px;
+    border: 2px dashed #ccc;
+    text-align: center;
+}
+
+    .upload-section > label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 1.25rem;
+        cursor: pointer;
+    }

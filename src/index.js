@@ -1,4 +1,15 @@
 ﻿(function () {
+    // yyyy-MM-dd HH:mm:ss
+    const dateFormatter = new Intl.DateTimeFormat('sv-SE', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    });
+
 
     function jsonToInsertSQL(jsonData, tableName, { valuesClause }) {
         if (!jsonData || jsonData.length === 0)
@@ -25,6 +36,8 @@
             const val = row[col];
             if (val === null || val === undefined)
                 return 'NULL';
+            if (val instanceof Date)
+                return `'${dateFormatter.format(val)}'`;
             if (typeof val === 'string')
                 return `N'${val.replace(/'/g, "''")}'`;
             return val;
@@ -33,7 +46,7 @@
 
     async function handleFile(file) {
         const data = new Uint8Array(await file.arrayBuffer());
-        const workbook = XLSX.read(data, { type: 'array' });
+        const workbook = XLSX.read(data, { type: 'array', cellDates: true });
         const sb = [];
         const options = {
             valuesClause: document.getElementById('valuesClause').checked

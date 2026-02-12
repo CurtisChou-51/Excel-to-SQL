@@ -1,4 +1,4 @@
-﻿# Excel-to-SQL
+﻿# ![](src/icon32.png) Excel-to-SQL
 Drag and drop to convert Excel to SQL insert statements.  
 All files are processed locally in your browser, without uploading to any server.  
 You can try it yourself [here](https://curtischou-51.github.io/Excel-to-SQL/src/).
